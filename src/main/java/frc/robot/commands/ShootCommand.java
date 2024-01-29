@@ -4,21 +4,22 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Shooter;
 import edu.wpi.first.wpilibj2.command.Command;
 
-public class IntakeNote extends Command {
-  private final Intake intake;
+/** An example command that uses an example subsystem. */
+public class ShootCommand extends Command {
+  private final Shooter shooter;
 
-  public IntakeNote(Intake containerIntake) {
-    intake = containerIntake;
-    addRequirements(intake);
+  public ShootCommand(Shooter containerShooter) {
+    shooter = containerShooter;
+    addRequirements(shooter);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    intake.dash();
+    shooter.dash();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -28,7 +29,7 @@ public class IntakeNote extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    intake.turnoff();
+    shooter.turnoff();
   }
 
   // Returns true when the command should end.

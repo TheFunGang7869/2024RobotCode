@@ -4,22 +4,22 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.ScissorLift;
 import edu.wpi.first.wpilibj2.command.Command;
 
-/** An example command that uses an example subsystem. */
-public class ShootNote extends Command {
-  private final Shooter shooter;
+public class ScissorLiftCommand extends Command {
+  private final ScissorLift scissorLift;
 
-  public ShootNote(Shooter containerShooter) {
-    shooter = containerShooter;
-    addRequirements(shooter);
+  // TODO: add boolean flag for whether the scissor lift is going up or down
+  public ScissorLiftCommand(ScissorLift containerScissorLift) {
+    scissorLift = containerScissorLift;
+    addRequirements(scissorLift);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    shooter.dash();
+    intake.dash();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -29,7 +29,7 @@ public class ShootNote extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    shooter.turnoff();
+    intake.turnoff();
   }
 
   // Returns true when the command should end.
