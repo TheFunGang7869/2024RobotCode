@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-
+import frc.robot.subsystems.DriveTrain;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -31,7 +31,7 @@ public class RobotContainer {
   private final Shooter shooter = new Shooter();
   private final Winch winch = new Winch();
   private final ScissorLift scissorLift = new ScissorLift();
-
+  private final DriveTrain driveTrain = new DriveTrain();
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final Joystick joystick = new Joystick(0); // Change to XBOX port
 
@@ -39,6 +39,8 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
+    driveTrain.setDefaultCommand(new TankDrive(() -> getXboxController().getLeftY(),
+     () -> getXboxController().getRightX(), driveTrain));
   }
 
 
