@@ -31,9 +31,25 @@ public final class Constants {
     public static final double intakeBackwardPower = 0.7;
   }
 
-  public static class ScissorLift {
-    public static final int scissorLiftID =
-    public static final double scissorLiftUpPower = 
-    public static final double scissorLiftDownPower = 
+  public static class ScissorLiftConstants {
+    public static final int scissorLiftMotorID = 3;
+    public static final double scissorLiftUpPower = 0.3;
+    public static final double scissorLiftDownPower = 0.2;
   }
-}
+
+  public static class AutoConstants {
+    public static final double autoSpeed = 0.3;
+    public static final double autoTime = 5;
+  }
+
+  public static final class DriveConstants {
+    public static final double joystickYPower = 1.3;
+    public static final double joystickXPower = 1.8;
+    public static final double joystickYScale = 0.8;
+    public static final double joystickXScale = 0.6;
+    
+    public static final int kLeftMotor1Port = 0;
+    public static final int kLeftMotor2Port = 1;
+    public static final int kRightMotor1Port = 2;
+    public static final int kRightMotor2Port = 3;     
+}}

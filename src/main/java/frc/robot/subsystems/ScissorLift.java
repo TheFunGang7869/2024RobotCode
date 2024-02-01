@@ -14,7 +14,7 @@ public class ScissorLift extends SubsystemBase {
 private WPI_TalonSRX scissorSRX;
   public ScissorLift() {
 
-    scissorSRX = new WPI_TalonSRX(ScissorLiftConstants.ScissorLiftMotorID);
+    scissorSRX = new WPI_TalonSRX(ScissorLiftConstants.scissorLiftMotorID);
 
   }
 public void turnoff(){
@@ -24,7 +24,7 @@ public void cleave(){
   scissorSRX.set(ScissorLiftConstants.scissorLiftUpPower);
 }
 public void dismantle(){
-  scissoreSRX.set(ScissorLiftConstants.scissorLiftDownPower);
+  scissorSRX.set(ScissorLiftConstants.scissorLiftDownPower);
 }
 
 }

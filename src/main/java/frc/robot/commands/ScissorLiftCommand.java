@@ -4,7 +4,6 @@
 
 package frc.robot.commands;
 
-import frc.robot.RobotContainer;
 import frc.robot.subsystems.ScissorLift;
 import edu.wpi.first.wpilibj2.command.Command;
 
