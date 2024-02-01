@@ -31,4 +31,9 @@ public final class Constants {
     public static final double intakeBackwardPower = 0.7;
   }
 
+  public static class ScissorLift {
+    public static final int scissorLiftID =
+    public static final double scissorLiftUpPower = 
+    public static final double scissorLiftDownPower = 
+  }
 }
