@@ -4,22 +4,30 @@
 
 package frc.robot.commands;
 
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.ScissorLift;
 import edu.wpi.first.wpilibj2.command.Command;
 
 public class ScissorLiftCommand extends Command {
   private final ScissorLift scissorLift;
+  
+  boolean isAscending = true;
 
-  // TODO: add boolean flag for whether the scissor lift is going up or down
-  public ScissorLiftCommand(ScissorLift containerScissorLift) {
+  public ScissorLiftCommand(ScissorLift containerScissorLift, boolean lift) {
     scissorLift = containerScissorLift;
+    isAscending = lift;
     addRequirements(scissorLift);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    intake.dash();
+    // if rise, then scissorLift ??  else then run down
+    if (isAscending) {
+      scissorLift.cleave();
+    } else {
+      scissorLift.dismantle();
+    }
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -29,7 +37,7 @@ public class ScissorLiftCommand extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    intake.turnoff();
+    scissorLift.turnoff();
   }
 
   // Returns true when the command should end.
