@@ -21,8 +21,8 @@ public class DriveTrain extends SubsystemBase {
 
   public DriveTrain() {
 
-    frontLeft = new WPI_VictorSPX(2);
-    backLeft = new WPI_VictorSPX(4);
+    frontLeft = new WPI_VictorSPX(4);
+    backLeft = new WPI_VictorSPX(2);
 
     frontRight = new WPI_VictorSPX(3);
     backRight = new WPI_VictorSPX(5);
