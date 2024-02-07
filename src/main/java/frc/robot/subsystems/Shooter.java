@@ -12,19 +12,27 @@ import frc.robot.Constants.ShooterConstants;
 public class Shooter extends SubsystemBase {
 
   private WPI_VictorSPX shooterSPX;
+  private WPI_VictorSPX shooterFollowerSPX;
+
   public Shooter() {
 
     shooterSPX = new WPI_VictorSPX(ShooterConstants.shooterMotorID);
+    shooterFollowerSPX = new WPI_VictorSPX(ShooterConstants.shooterFollowerMotorID);
+    shooterFollowerSPX.follow(shooterSPX);
   }
-  public void turnoff(){
+
+  public void turnoff() {
     shooterSPX.set(0.0);
   }
-  public void dash(){
+
+  public void dash() {
     shooterSPX.set(ShooterConstants.shooterDash);
   }
-  public void moonwalk(){
+
+  public void moonwalk() {
     shooterSPX.set(ShooterConstants.shooterMoonwalk);
   }
+
   /**
    * Example command factory method.
    *
@@ -32,7 +40,8 @@ public class Shooter extends SubsystemBase {
    */
 
   /**
-   * An example method querying a boolean state of the subsystem (for example, a digital sensor).
+   * An example method querying a boolean state of the subsystem (for example, a
+   * digital sensor).
    *
    * @return value of some boolean subsystem state, such as a digital sensor.
    */
