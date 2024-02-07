@@ -19,6 +19,10 @@ public class Shooter extends SubsystemBase {
     shooterSPX = new WPI_VictorSPX(ShooterConstants.shooterMotorID);
     shooterFollowerSPX = new WPI_VictorSPX(ShooterConstants.shooterFollowerMotorID);
     shooterFollowerSPX.follow(shooterSPX);
+
+    shooterSPX.setInverted(true);
+    shooterFollowerSPX.setInverted(true);
+
   }
 
   public void turnoff() {

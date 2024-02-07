@@ -10,30 +10,35 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
+import com.revrobotics.jni.CANSparkMaxJNI;
 
 public class Winch extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   // DECLARE MOTOR
   private CANSparkMax winchSparkMax;
+  private CANSparkMax winchFollowerSparkMax;
 
   public Winch() {
-    //Instantiate MOTOR
+    // Instantiate MOTOR
+    winchFollowerSparkMax = new CANSparkMax(WinchConstants.winchMotorFollowID, MotorType.kBrushless);
     winchSparkMax = new CANSparkMax(WinchConstants.winchMotorID, MotorType.kBrushless);
+    winchFollowerSparkMax.follow(winchSparkMax);
+
+    winchSparkMax.setInverted(true);
+    winchFollowerSparkMax.setInverted(true);
   }
 
-  public void awaken()
-  {
+  public void awaken() {
     winchSparkMax.set(WinchConstants.winchLiftPower);
   }
 
-  public void slumber()
-  {
+  public void slumber() {
     winchSparkMax.set(0.0);
   }
 
-
   /**
-   * An example method querying a boolean state of the subsystem (for example, a digital sensor).
+   * An example method querying a boolean state of the subsystem (for example, a
+   * digital sensor).
    *
    * @return value of some boolean subsystem state, such as a digital sensor.
    */
