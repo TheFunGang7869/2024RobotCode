@@ -32,6 +32,7 @@ public class DriveTrain extends SubsystemBase {
 
     // TODO : which side of the robot?
     frontRight.setInverted(true);
+    backRight.setInverted(true);
 
     differentialDrive = new DifferentialDrive(frontLeft, frontRight);
   }

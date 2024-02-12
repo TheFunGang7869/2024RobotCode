@@ -6,10 +6,13 @@ package frc.robot.commands;
 
 import frc.robot.subsystems.Shooter;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj.Timer;
 
 /** An example command that uses an example subsystem. */
 public class ShootCommand extends Command {
   private final Shooter shooter;
+
+  private final Timer timer = new Timer();
 
   public ShootCommand(Shooter containerShooter) {
     shooter = containerShooter;
@@ -19,7 +22,13 @@ public class ShootCommand extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    shooter.turnoff();
+    timer.restart();
     shooter.dash();
+    while (timer.get() <= 1){
+
+    }
+    shooter.followerDash();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -29,7 +38,8 @@ public class ShootCommand extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    shooter.turnoff();
+    //shooter.turnoff();
+    shooter.moonwalk();
   }
 
   // Returns true when the command should end.

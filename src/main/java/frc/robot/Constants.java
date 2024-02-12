@@ -27,7 +27,8 @@ public final class Constants {
   public static class ShooterConstants {
     public static final int shooterMotorID = 1;
     public static final int shooterFollowerMotorID = 7;
-    public static final double shooterDash = 0.2;
+    public static final double shooterDash = 1.0;
+    public static final double shooterFollowerDash = 1.0;
     public static final double shooterMoonwalk = -0.3;
   }
 
