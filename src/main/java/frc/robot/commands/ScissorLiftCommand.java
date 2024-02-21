@@ -8,10 +8,10 @@ import frc.robot.subsystems.ScissorLift;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants.ScissorLiftConstants;
 
-
+import edu.wpi.first.wpilibj.AnalogPotentiometer;
 public class ScissorLiftCommand extends Command {
   private final ScissorLift scissorLift;
- private final AnalogPotentiometer pot = new AnalogPotentiometer(0, 180, 0);
+ private final AnalogPotentiometer pot = new AnalogPotentiometer(3, 180, 0);
   
   boolean isAscending = true;
 
