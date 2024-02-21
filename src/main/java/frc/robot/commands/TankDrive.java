@@ -28,11 +28,18 @@ public class TankDrive extends Command {
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
-    public void execute() {
+    public void execute() {  
+        double left = m_left.getAsDouble();
+        double right = m_right.getAsDouble();
 
-        m_driveTrain.drive(Math.pow(-1 * m_left.getAsDouble(), 1.5), Math.pow(-1 * m_right.getAsDouble(), 1.5));
-    }
+        left = axisFilter(left, Constants.DriveConstants.joystickYPower);
+        left = left * Constants.DriveConstants.joystickYScale;
+        right = axisFilter(right, Constants.DriveConstants.joystickXPower);
+        right = right * Constants.DriveConstants.joystickXScale;
 
+        m_driveTrain.drive(left, right);
+    }    
+    
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
@@ -49,5 +56,18 @@ public class TankDrive extends Command {
     public boolean runsWhenDisabled() {
         return false;
 
+    }
+
+    // function to invert / filter joystick inputs before driving
+    private double axisFilter(double x, double n){
+        if(x > 0){
+            x = Math.pow(x, n);
+            x = x * -1;
+        }
+        else{
+            x = x * -1;
+            x = Math.pow(x, n);
+        }
+        return x;
     }
 }
