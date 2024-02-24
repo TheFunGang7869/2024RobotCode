@@ -6,25 +6,25 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import frc.robot.Constants.ScissorLiftConstants;
 
 public class ScissorLift extends SubsystemBase {
 
-private WPI_TalonSRX scissorSRX;
+private WPI_VictorSPX scissorSPX;
   public ScissorLift() {
 
-    scissorSRX = new WPI_TalonSRX(ScissorLiftConstants.scissorLiftMotorID);
+    scissorSPX = new WPI_VictorSPX(ScissorLiftConstants.scissorLiftMotorID);
 
   }
 public void turnoff(){
-  scissorSRX.set(0.0);
+  scissorSPX.set(0.0);
 }
 public void cleave(){
-  scissorSRX.set(ScissorLiftConstants.scissorLiftUpPower);
+  scissorSPX.set(ScissorLiftConstants.scissorLiftUpPower);
 }
 public void dismantle(){
-  scissorSRX.set(ScissorLiftConstants.scissorLiftDownPower);
+  scissorSPX.set(ScissorLiftConstants.scissorLiftDownPower);
 }
 
 }

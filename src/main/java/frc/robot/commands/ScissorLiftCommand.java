@@ -7,11 +7,11 @@ package frc.robot.commands;
 import frc.robot.subsystems.ScissorLift;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants.ScissorLiftConstants;
-
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
+
 public class ScissorLiftCommand extends Command {
-  private final ScissorLift scissorLift;
- private final AnalogPotentiometer pot = new AnalogPotentiometer(3, 180, 0);
+private final ScissorLift scissorLift;
+//private final AnalogPotentiometer pot = new AnalogPotentiometer(3, 180, 0);
   
   boolean isAscending = true;
 
@@ -34,7 +34,15 @@ public class ScissorLiftCommand extends Command {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    /*System.out.println("itsa me amario");
+    if (isAscending) {
+      scissorLift.cleave();
+    } else {
+      scissorLift.dismantle();
+    }*/
+
+  }
 
   // Called once the command ends or is interrupted.
   @Override
@@ -45,10 +53,13 @@ public class ScissorLiftCommand extends Command {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    if (pot.get()< (ScissorLiftConstants.scissorLiftMinV) || pot.get()> ScissorLiftConstants.scissorLiftMaxV) {
-      return true;
-    } else {
-      return false;
-  }
+//    if (pot.get()< (ScissorLiftConstants.scissorLiftMinV) || pot.get()> ScissorLiftConstants.scissorLiftMaxV) {
+//      return true;
+//    } else {
+//      return false;
+//  }
+
+return false;
+
 }
   }

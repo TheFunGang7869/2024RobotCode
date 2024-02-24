@@ -20,7 +20,7 @@ public final class Constants {
 
   public static class WinchConstants {
     public static final int winchMotorID = 10;
-    public static final double winchLiftPower = 0.7;
+    public static final double winchLiftPower = 0.1;
     public static final int winchMotorFollowID = 11;
   }
 
@@ -39,9 +39,9 @@ public final class Constants {
   }
 
   public static class ScissorLiftConstants {
-    public static final int scissorLiftMotorID = 3;
-    public static final double scissorLiftUpPower = -0.3;
-    public static final double scissorLiftDownPower = 0.3;
+    public static final int scissorLiftMotorID = 22;//3;
+    public static final double scissorLiftUpPower = -0.7;
+    public static final double scissorLiftDownPower = 0.7;
     public static final double scissorLiftMinV = 0;
     public static final double scissorLiftMaxV = 100;
     
@@ -55,8 +55,8 @@ public final class Constants {
   public static final class DriveConstants {
     public static final double joystickYPower = 1.3;
     public static final double joystickXPower = 1.8;
-    public static final double joystickYScale = 0.8;
-    public static final double joystickXScale = 0.6;
+    public static final double joystickYScale = 0.7;
+    public static final double joystickXScale = 0.7;
 
     public static final int kLeftMotor1Port = 0;
     public static final int kLeftMotor2Port = 1;
