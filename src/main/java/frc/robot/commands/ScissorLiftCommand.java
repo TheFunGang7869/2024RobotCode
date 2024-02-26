@@ -7,12 +7,9 @@ package frc.robot.commands;
 import frc.robot.subsystems.ScissorLift;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants.ScissorLiftConstants;
-import edu.wpi.first.wpilibj.AnalogPotentiometer;
 
 public class ScissorLiftCommand extends Command {
-private final ScissorLift scissorLift;
-//private final AnalogPotentiometer pot = new AnalogPotentiometer(3, 180, 0);
-  
+  private final ScissorLift scissorLift;
   boolean isAscending = true;
 
   public ScissorLiftCommand(ScissorLift containerScissorLift, boolean lift) {
@@ -24,7 +21,6 @@ private final ScissorLift scissorLift;
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    // if rise, then scissorLift ??  else then run down
     if (isAscending) {
       scissorLift.cleave();
     } else {
@@ -35,12 +31,14 @@ private final ScissorLift scissorLift;
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    /*System.out.println("itsa me amario");
-    if (isAscending) {
-      scissorLift.cleave();
-    } else {
-      scissorLift.dismantle();
-    }*/
+    /*
+     * System.out.println("itsa me amario");
+     * if (isAscending) {
+     * scissorLift.cleave();
+     * } else {
+     * scissorLift.dismantle();
+     * }
+     */
 
   }
 
@@ -53,13 +51,17 @@ private final ScissorLift scissorLift;
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-//    if (pot.get()< (ScissorLiftConstants.scissorLiftMinV) || pot.get()> ScissorLiftConstants.scissorLiftMaxV) {
-//      return true;
-//    } else {
-//      return false;
-//  }
-
-return false;
-
-}
+    /*
+     * boolean pastMaxVal = scissorLift.getLiftPosition() >
+     * ScissorLiftConstants.scissorLiftMaxV;
+     * boolean pastMinVal = scissorLift.getLiftPosition() <
+     * ScissorLiftConstants.scissorLiftMinV;
+     * if (pastMinVal || pastMaxVal) {
+     * return true;
+     * } else {
+     * return false;
+     * }
+     */
+    return false;
   }
+}

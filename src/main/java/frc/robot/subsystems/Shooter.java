@@ -18,7 +18,7 @@ public class Shooter extends SubsystemBase {
 
     shooterSPX = new WPI_VictorSPX(ShooterConstants.shooterMotorID);
     shooterFollowerSPX = new WPI_VictorSPX(ShooterConstants.shooterFollowerMotorID);
-    //shooterFollowerSPX.follow(shooterSPX);
+    // shooterFollowerSPX.follow(shooterSPX);
 
     shooterSPX.setInverted(true);
     shooterFollowerSPX.setInverted(true);
@@ -35,12 +35,12 @@ public class Shooter extends SubsystemBase {
   }
 
   public void followerDash() {
-    shooterFollowerSPX.set(ShooterConstants.shooterFollowerDash); 
+    shooterFollowerSPX.set(ShooterConstants.shooterFollowerDash);
   }
 
   public void moonwalk() {
     shooterSPX.set(ShooterConstants.shooterMoonwalk);
-    shooterFollowerSPX.set(ShooterConstants.shooterMoonwalk); 
+    shooterFollowerSPX.set(ShooterConstants.shooterMoonwalk);
 
   }
 
