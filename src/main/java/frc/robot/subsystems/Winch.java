@@ -32,6 +32,10 @@ public class Winch extends SubsystemBase {
     winchSparkMax.set(WinchConstants.winchLiftPower);
   }
 
+  public void retract() {
+    winchSparkMax.set(WinchConstants.winchRetractPower);
+  }
+
   public void slumber() {
     winchSparkMax.set(0.0);
   }
