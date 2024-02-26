@@ -41,10 +41,10 @@ public final class Constants {
 
   public static class ScissorLiftConstants {
     public static final int scissorLiftMotorID = 22;//3;
-    public static final double scissorLiftUpPower = -0.7;
-    public static final double scissorLiftDownPower = 0.7;
-    public static final double scissorLiftMinV = 0;
-    public static final double scissorLiftMaxV = 100;
+    public static final double scissorLiftUpPower = 0.7;
+    public static final double scissorLiftDownPower = -0.7;
+    public static final double scissorLiftMinV = 25.6;
+    public static final double scissorLiftMaxV = 85.7;
     
   }
 

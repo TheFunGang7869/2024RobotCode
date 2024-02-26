@@ -51,17 +51,16 @@ public class ScissorLiftCommand extends Command {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    /*
-     * boolean pastMaxVal = scissorLift.getLiftPosition() >
-     * ScissorLiftConstants.scissorLiftMaxV;
-     * boolean pastMinVal = scissorLift.getLiftPosition() <
-     * ScissorLiftConstants.scissorLiftMinV;
-     * if (pastMinVal || pastMaxVal) {
-     * return true;
-     * } else {
-     * return false;
-     * }
-     */
-    return false;
+    
+      boolean pastMaxVal = scissorLift.getLiftPosition() >
+      ScissorLiftConstants.scissorLiftMaxV;
+      boolean pastMinVal = scissorLift.getLiftPosition() <
+      ScissorLiftConstants.scissorLiftMinV;
+      if ((pastMinVal && isAscending) || (pastMaxVal && !isAscending)) {
+      return true;
+      } else {
+      return false;
+      }
+  
   }
 }

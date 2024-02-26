@@ -19,7 +19,7 @@ public class ScissorLift extends SubsystemBase {
   public ScissorLift() {
 
     scissorSPX = new WPI_VictorSPX(ScissorLiftConstants.scissorLiftMotorID);
-    pot = new AnalogPotentiometer(2, 100, 0);
+    pot = new AnalogPotentiometer(3, 100, 0);
 
   }
 
