@@ -4,34 +4,30 @@
 
 package frc.robot.subsystems;
 
-import frc.robot.Constants.WinchConstants;
-
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.ClawConstants;
 
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkLowLevel.MotorType;
+public class Claw extends SubsystemBase {
 
-public class Winch extends SubsystemBase {
-  // DECLARE MOTOR
-  private CANSparkMax winchSparkMax;
-  private CANSparkMax winchFollowerSparkMax;
+  private WPI_VictorSPX clawSPX;
 
-  public Winch() {
-    // Instantiate MOTOR
-    winchFollowerSparkMax = new CANSparkMax(WinchConstants.winchMotorFollowID, MotorType.kBrushless);
-    winchSparkMax = new CANSparkMax(WinchConstants.winchMotorID, MotorType.kBrushless);
-    winchFollowerSparkMax.follow(winchSparkMax);
+  public Claw() {
 
-    winchSparkMax.setInverted(true);
-    winchFollowerSparkMax.setInverted(true);
+    clawSPX = new WPI_VictorSPX(ClawConstants.clawMotorID);
+
   }
 
-  public void awaken() {
-    winchSparkMax.set(WinchConstants.winchLiftPower);
+  public void turnoff() {
+    clawSPX.set(0.0);
   }
 
-  public void slumber() {
-    winchSparkMax.set(0.0);
+  public void intake() {
+    clawSPX.set(ClawConstants.clawForwardPower);
+  }
+
+  public void shoot() {
+    clawSPX.set(ClawConstants.clawBackwardPower);
   }
 
   /**

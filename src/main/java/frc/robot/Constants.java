@@ -39,17 +39,24 @@ public final class Constants {
   }
 
   public static class ScissorLiftConstants {
-    public static final int scissorLiftMotorID = 22;//3;
+    public static final int scissorLiftMotorID = 22;// 3;
     public static final double scissorLiftUpPower = -0.7;
     public static final double scissorLiftDownPower = 0.7;
     public static final double scissorLiftMinV = 0;
     public static final double scissorLiftMaxV = 100;
-    
+
   }
 
   public static class AutoConstants {
     public static final double autoSpeed = 0.3;
     public static final double autoTime = 5;
+  }
+
+  public static final class ClawConstants {
+    public static final int clawMotorID = 21;
+    public static final double clawForwardPower = 0.2;
+    public static final double clawBackwardPower = -0.2;
+
   }
 
   public static final class DriveConstants {
