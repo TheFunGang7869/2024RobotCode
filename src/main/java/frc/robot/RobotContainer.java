@@ -39,6 +39,7 @@ public class RobotContainer {
    new JoystickButton(joystick, 1).whileTrue(new ShootCommand(shooter));
    new JoystickButton(joystick, 3).whileTrue(new IntakeCommand(intake));
     new JoystickButton(joystick, 2).whileTrue(new WinchCommand(winch));
+    new JoystickButton(joystick, 8).whileTrue(new WinchRetractCommand(winch));
     new JoystickButton(joystick, 4).whileTrue(new ScissorLiftCommand(scissorLift, true));//True means go up!
     new JoystickButton(joystick, 5).whileTrue(new ScissorLiftCommand(scissorLift, false));//False means go down!
   
