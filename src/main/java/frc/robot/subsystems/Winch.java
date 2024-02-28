@@ -54,6 +54,10 @@ public class Winch extends SubsystemBase {
     return false;
   }
 
+  public void resetEncoder() {
+    winchEncoder.setPosition(0.0);
+  }
+
   @Override
   public void periodic() {
     SmartDashboard.putNumber("Winch Position", winchEncoder.getPosition());

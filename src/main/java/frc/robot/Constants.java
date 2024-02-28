@@ -20,7 +20,7 @@ public final class Constants {
 
   public static class WinchConstants {
     public static final int winchMotorID = 10;
-    public static final double winchLiftPower = 0.4;
+    public static final double winchLiftPower = 0.2;
     public static final double winchRetractPower = -0.4;
     public static final int winchMotorFollowID = 11;
   }
@@ -30,7 +30,7 @@ public final class Constants {
     public static final int shooterFollowerMotorID = 7;
     public static final double shooterDash = 1.0;
     public static final double shooterFollowerDash = 1.0;
-    public static final double shooterMoonwalk = -0.3;
+    public static final double shooterMoonwalk = -0.15;
   }
 
   public static class IntakeConstants {
