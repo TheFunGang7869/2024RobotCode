@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class IntakeCommand extends Command {
   private final Intake intake;
 
-  public IntakeCommand(Intake containerIntake) {
+  public IntakeCommand(Intake containerGroundIntake) {
     intake = containerIntake;
     addRequirements(intake);
   }
@@ -28,7 +28,7 @@ public class IntakeCommand extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    intake.turnoff();
+    intake.moonwalk();
   }
 
   // Returns true when the command should end.

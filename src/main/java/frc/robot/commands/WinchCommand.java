@@ -19,7 +19,7 @@ public class WinchCommand extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    winch.awaken();
+     winch.awaken();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -29,7 +29,7 @@ public class WinchCommand extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    winch.slumber();
+     winch.slumber();
   }
 
   // Returns true when the command should end.

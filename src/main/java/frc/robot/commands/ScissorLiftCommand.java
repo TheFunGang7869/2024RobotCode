@@ -22,9 +22,9 @@ public class ScissorLiftCommand extends Command {
   @Override
   public void initialize() {
     if (isAscending) {
-      scissorLift.cleave();
+      scissorLift.rise();
     } else {
-      scissorLift.dismantle();
+      scissorLift.lower();
     }
   }
 
@@ -45,7 +45,7 @@ public class ScissorLiftCommand extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    scissorLift.turnoff();
+     scissorLift.turnoff();
   }
 
   // Returns true when the command should end.
@@ -60,7 +60,7 @@ public class ScissorLiftCommand extends Command {
       return true;
       } else {
       return false;
-      }
+       }
   
   }
 }

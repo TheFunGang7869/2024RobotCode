@@ -4,31 +4,21 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.GroundIntake;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj.Timer;
 
-/** An example command that uses an example subsystem. */
-public class ShootCommand extends Command {
-  private final Shooter shooter;
+public class GroundIntakeCommand extends Command {
+  private final GroundIntake groundIntake;
 
-  private final Timer timer = new Timer();
-
-  public ShootCommand(Shooter containerShooter) {
-    shooter = containerShooter;
-    addRequirements(shooter);
+  public GroundIntakeCommand(GroundIntake containerGroundIntake) {
+    groundIntake = containerGroundIntake;
+    addRequirements(groundIntake);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-     shooter.turnoff();
-     timer.restart();
-     shooter.dash();
-     while (timer.get() <= 1){
-
-     }
-     shooter.followerDash();
+    intake.succ();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -38,8 +28,7 @@ public class ShootCommand extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    shooter.turnoff();
-     shooter.moonwalk();
+    intake.spit();
   }
 
   // Returns true when the command should end.
