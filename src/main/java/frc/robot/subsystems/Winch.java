@@ -9,36 +9,39 @@ import frc.robot.Constants.WinchConstants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkBase.IdleMode;
 import com.revrobotics.CANSparkLowLevel.MotorType;
-import com.revrobotics.jni.CANSparkMaxJNI;
 
 public class Winch extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   // DECLARE MOTOR
-  private CANSparkMax winchSparkMax;
-  private CANSparkMax winchFollowerSparkMax;
+   private CANSparkMax winchSparkMax;
+   private CANSparkMax winchFollowerSparkMax;
 
-  public Winch() {
-    // Instantiate MOTOR
-    winchFollowerSparkMax = new CANSparkMax(WinchConstants.winchMotorFollowID, MotorType.kBrushless);
-    winchSparkMax = new CANSparkMax(WinchConstants.winchMotorID, MotorType.kBrushless);
-    winchFollowerSparkMax.follow(winchSparkMax);
+   public Winch() {
+     // Instantiate MOTOR
+     winchFollowerSparkMax = new CANSparkMax(WinchConstants.winchMotorFollowID, MotorType.kBrushless);
+     winchSparkMax = new CANSparkMax(WinchConstants.winchMotorID, MotorType.kBrushless);
+     winchFollowerSparkMax.follow(winchSparkMax);
 
-    winchSparkMax.setInverted(true);
-    winchFollowerSparkMax.setInverted(true);
-  }
+     winchSparkMax.setInverted(true);
+     winchFollowerSparkMax.setInverted(true);
 
-  public void awaken() {
-    winchSparkMax.set(WinchConstants.winchLiftPower);
-  }
+     winchSparkMax.setIdleMode(IdleMode.kBrake);
+     winchFollowerSparkMax.setIdleMode(IdleMode.kBrake);
+   }
 
-  public void retract() {
-    winchSparkMax.set(WinchConstants.winchRetractPower);
-  }
+   public void awaken() {
+     winchSparkMax.set(WinchConstants.winchLiftPower);
+   }
 
-  public void slumber() {
-    winchSparkMax.set(0.0);
-  }
+   public void retract() {
+     winchSparkMax.set(WinchConstants.winchRetractPower);
+   }
+
+   public void slumber() {
+     winchSparkMax.set(0.0);
+   }
 
   /**
    * An example method querying a boolean state of the subsystem (for example, a

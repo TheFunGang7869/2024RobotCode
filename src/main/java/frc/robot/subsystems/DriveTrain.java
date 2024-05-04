@@ -5,6 +5,8 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -30,14 +32,23 @@ public class DriveTrain extends SubsystemBase {
     backLeft.follow(frontLeft);
     backRight.follow(frontRight);
 
-    // TODO : which side of the robot?
-    frontRight.setInverted(true);
-    backRight.setInverted(true);
+    frontLeft.setNeutralMode(NeutralMode.Brake);
+    frontRight.setNeutralMode(NeutralMode.Brake);
 
-    differentialDrive = new DifferentialDrive(frontLeft, frontRight);
+    // TODO : which side of the robot?
+    frontLeft.setInverted(true);
+    backLeft.setInverted(true);
+
+
+
+    differentialDrive = new DifferentialDrive(frontRight, frontLeft);
   }
 
   public void drive(double left, double right) {
+    
+    //SmartDashboard.putNumber("DriveLeft", left);
+    //SmartDashboard.putNumber("Drive right", right);
+
     differentialDrive.arcadeDrive(left, right);
   }
 

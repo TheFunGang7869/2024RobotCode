@@ -11,38 +11,38 @@ import frc.robot.Constants.ShooterConstants;
 
 public class Shooter extends SubsystemBase {
 
-  private WPI_VictorSPX shooterSPX;
-  private WPI_VictorSPX shooterFollowerSPX;
+   private WPI_VictorSPX shooterSPX;
+   private WPI_VictorSPX shooterFollowerSPX;
 
-  public Shooter() {
+   public Shooter() {
 
-    shooterSPX = new WPI_VictorSPX(ShooterConstants.shooterMotorID);
-    shooterFollowerSPX = new WPI_VictorSPX(ShooterConstants.shooterFollowerMotorID);
-    // shooterFollowerSPX.follow(shooterSPX);
+     shooterSPX = new WPI_VictorSPX(ShooterConstants.shooterMotorID);
+     shooterFollowerSPX = new WPI_VictorSPX(ShooterConstants.shooterFollowerMotorID);
+      shooterFollowerSPX.follow(shooterSPX);
 
-    shooterSPX.setInverted(true);
-    shooterFollowerSPX.setInverted(true);
+     shooterSPX.setInverted(true);
+     shooterFollowerSPX.setInverted(true);
 
-  }
+   }
 
-  public void turnoff() {
-    shooterSPX.set(0);
-    shooterFollowerSPX.set(0);
-  }
+   public void turnoff() {
+     shooterSPX.set(0);
+     shooterFollowerSPX.set(0);
+   }
 
-  public void dash() {
-    shooterSPX.set(ShooterConstants.shooterDash);
-  }
+   public void dash() {
+     shooterSPX.set(ShooterConstants.shooterDash);
+   }
 
-  public void followerDash() {
-    shooterFollowerSPX.set(ShooterConstants.shooterFollowerDash);
-  }
+   public void followerDash() {
+     shooterFollowerSPX.set(ShooterConstants.shooterFollowerDash);
+   }
 
-  public void moonwalk() {
-    shooterSPX.set(ShooterConstants.shooterMoonwalk);
-    shooterFollowerSPX.set(ShooterConstants.shooterMoonwalk);
+   public void moonwalk() {
+     shooterSPX.set(ShooterConstants.shooterMoonwalk);
+     shooterFollowerSPX.set(ShooterConstants.shooterMoonwalk);
 
-  }
+   }
 
   /**
    * Example command factory method.

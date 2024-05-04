@@ -21,6 +21,7 @@ public class ScissorLift extends SubsystemBase {
     scissorSPX = new WPI_VictorSPX(ScissorLiftConstants.scissorLiftMotorID);
     pot = new AnalogPotentiometer(3, 100, 0);
 
+    scissorSPX.setNeutralMode(NeutralMode.Brake);
   }
 
   @Override
