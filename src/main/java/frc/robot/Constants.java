@@ -66,10 +66,10 @@ public final class Constants {
   }
 
   public static final class DriveConstants {
-    public static final double joystickYPower = 1.3;
-    public static final double joystickXPower = 1.8;
-    public static final double joystickYScale = 0.9;
-    public static final double joystickXScale = 0.9;
+    public static final double joystickYPower = 1.7;
+    public static final double joystickXPower = 1.3;
+    public static final double joystickYScale = 1.0;
+    public static final double joystickXScale = 1.0;
 
     public static final int kLeftMotor1Port = 0;
     public static final int kLeftMotor2Port = 1;
